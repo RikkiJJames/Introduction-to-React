@@ -4,8 +4,24 @@ Introduction to the JavaScript Framework React
 # Contents
 
  * [Section 1 - JSX](#section-1---jsx)
-   * [Numbers](#numbers)
-
+   * [JSX Empty Elements Syntax](#jsx-empty-elements-syntax)
+   * [JSX Attributes](#jsx-attributes)
+   * [JSX className](#jsx-classname)
+   * [Multiline JSX Expression](#multiline-jsx-expression)
+   * [Nested JSX Expression](#nested-jsx-expression)
+   * [Embedding JavaScript in JSX](#embedding-javascript-in-jsx)
+     * [Setting JSX attribute values with embedded JavaScript](#setting-jsx-attribute-values-with-embedded-javascript)
+   * [Javascript Conditionals](#javascript-conditionals)
+     * [&& Operator](#&&-operator)
+     * [Tenary Statements](#tenary-statements)
+     * [if/else Statements](#if-else-statements)
+   * [JSX Key Attribute](#jsx-key-attribute)
+   * [JSX Element Event Listeners](#jsx-element-event-listeners)
+   * [JSX .map() method](#jsx--map----method)
+   * [Rendering JSX](#rendering-jsx)
+      * [ReactDOM JavaScript library](#reactdom-javascript-library)
+      * [The Virtual DOM](#the-virtual-dom)
+      * [React.createElement() Creates Virtual DOM Elements](#eeact.createelement---creates-virtual-dom-elements)
 
 ## Section 1 - JSX
 
@@ -191,7 +207,7 @@ ReactDOM.render(
 );
 ```
 
-#### The Virtual Dom
+#### The Virtual DOM
 
 React uses Virtual DOM, which can be thought of as a blueprint of the DOM. When any changes are made to React elements, the Virtual DOM is updated. The Virtual DOM finds the differences between it and the DOM and re-renders only the elements in the DOM that changed. This makes the Virtual DOM faster and more efficient than updating the entire DOM.
 
