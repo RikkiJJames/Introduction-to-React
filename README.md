@@ -196,6 +196,23 @@ const listItems = strings.map(string => <li>{string}</li>);
 
 ### Rendering JSX
 
+### Importing React
+
+In order to use React, we must first import the React library. When we import the library, it creates an object that contains properties needed to make React work, including JSX and creating custom components.
+
+```javascript
+import React from 'react';
+```
+
+### Importing ReactDOM
+
+To render JSX to the DOM, ReactDOM must be imported
+
+```javascript
+
+import ReactDOM from 'react-dom';
+```
+
 #### ReactDOM JavaScript library
 
 The JavaScript library react-dom, sometimes called ReactDOM, renders JSX elements to the DOM by taking a JSX expression, creating a corresponding tree of DOM nodes, and adding that tree to the DOM.
@@ -231,3 +248,75 @@ const h1 = React.createElement(
 );
 ```
 
+## Section 2 - React Components
+
+React components act as blueprint in which multiple instances of the component can be created.
+
+### JSX Capitalization
+
+React requires that the first letter of components be capitalized. JSX will use this capitalization to tell the difference between an HTML tag and a component instance. If the first letter of a name is capitalized, then JSX knows it’s a component instance; if not, then it’s an HTML element.
+
+```javascript
+// This is considered a component by React.
+<ThisComponent />
+  
+// This is considered a JSX HTML tag. 
+<div>
+```
+### React Component Base Class
+
+A React component is a reusable piece of code used to define the appearance, behavior, and state of a portion of a web app’s interface. Components are defined as functions or as classes. Using the component as a factory, an infinite number of component instances can be created.
+
+```javascript
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello world!</h1>;
+  }
+}
+```
+
+### render() Method
+
+React class components must have a render() method. This method should return some React elements created with JSX.
+
+```javascript
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello from the render method!</h1>;
+  }
+}
+```
+### ReactDOM.render()
+
+ReactDOM.render()‘s first argument is a component instance. It will render that component instance. In this example, we will render an instance of MyComponent.
+
+
+```javascript
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello world!</h1>;
+  }
+}
+
+ReactDOM.render(<MyComponent />, document.getElementById('app'));
+```
+
+### Code in render()
+
+A React component can contain JavaScript before any JSX is returned. The JavaScript before the return statement informs any logic necessary to render the component.
+
+In the example code, we see JavaScript prior to the return statement which rounds the value to an integer.
+
+```javascript
+class Integer extends React.Component {
+  render() {
+    const value = 3.14;
+    const asInteger = Math.round(value);
+    return <p>{asInteger}</p>;
+  }
+}
+```
